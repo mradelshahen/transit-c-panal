@@ -1,0 +1,30 @@
+<div>
+  <h1 class="font-weight-bold text-capitalize text-center">Edit Tender</h1>
+  <h3>Company Tenders:</h3>
+  <div class="tenders bg-white mt-4" *ngFor="let tender of tenderList">
+    <div class="tender_card p-2 row m-0">
+      <div class="details col-8 row">
+        <div class="tender__name col-6">
+          <span>Tender Name</span>
+          <h4>{{ tender.Tender_NameEn }}</h4>
+        </div>
+      </div>
+      <div class="col-4 edit__btn row m-auto">
+        <div class="btn_delete col-6">
+          <button
+            class="btn btn-danger"
+            (click)="onDeleteTender(tender.Tender_ID)"
+          >
+            Delete
+          </button>
+        </div>
+        <div class="btn_edit col-6">
+          <button class="btn btn-primary" (click)="isEdit = !isEdit">
+            Edit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-add-tender *ngIf="isEdit"></app-add-tender>
+</div>

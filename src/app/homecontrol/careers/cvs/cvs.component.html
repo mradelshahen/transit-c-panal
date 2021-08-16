@@ -1,0 +1,15 @@
+<h1 class="font-weight-bold text-capitalize text-center">All Cvs</h1>
+<div class="cvs bg-white mt-4">
+  <div class="cvs_card p-2 row m-0" *ngFor="let item of allCvs">
+    <div class="details col-8 row">
+      <div class="cvs__name col-6">
+        <span> Name</span>
+        <h4>{{ item.FirstNameEn }}</h4>
+      </div>
+      <div class="cvs__name col-6">
+        <span class="w-100">CV</span>
+        <h4><a [href]="base_url + item.uploadedCv">Open CV</a></h4>
+      </div>
+    </div>
+  </div>
+</div>

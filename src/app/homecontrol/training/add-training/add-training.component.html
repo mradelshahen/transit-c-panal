@@ -1,0 +1,165 @@
+<div class="training">
+  <h1 class="font-weight-bold text-capitalize text-center">Add Course</h1>
+  <p>All <span>*</span> Required</p>
+  <form [formGroup]="addTraining" (ngSubmit)="onSubmitTraining()">
+    <div class="row">
+      <div class="col-12 mt-1">
+        <label for="Course_NameEn">Course Name En</label>
+        <input
+          [class]="{
+            'is-invalid': submitted && getFormControls.Course_NameEn.errors
+          }"
+          id="Course_NameEn"
+          class="form-control"
+          type="text"
+          name="Course_NameEn"
+          formControlName="Course_NameEn"
+          placeholder="SAP"
+        />
+        <div
+          *ngIf="
+            getFormControls.Course_NameEn.invalid &&
+            (getFormControls.Course_NameEn.dirty ||
+              getFormControls.Course_NameEn.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="getFormControls.Course_NameEn.errors?.required">
+            required.
+          </div>
+          <div *ngIf="getFormControls.Course_NameEn.errors?.minlength">
+            must be at least 3 characters long.
+          </div>
+          <div *ngIf="getFormControls.Course_NameEn.errors?.pattern">
+            must be in arabic
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-1">
+        <label for="Course_NameAr">Course Name Ar</label>
+        <input
+          [class]="{
+            'is-invalid': submitted && getFormControls.Course_NameAr.errors
+          }"
+          id="Course_NameAr"
+          class="form-control text-right"
+          type="text"
+          name="Course_NameAr"
+          formControlName="Course_NameAr"
+          placeholder="ساب"
+        />
+        <div
+          *ngIf="
+            getFormControls.Course_NameAr.invalid &&
+            (getFormControls.Course_NameAr.dirty ||
+              getFormControls.Course_NameAr.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="getFormControls.Course_NameAr.errors?.required">
+            required.
+          </div>
+          <div *ngIf="getFormControls.Course_NameAr.errors?.minlength">
+            must be at least 3 characters long.
+          </div>
+          <div *ngIf="getFormControls.Course_NameAr.errors?.pattern">
+            must be in arabic
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-1">
+        <label for="Course_DetailsEn">Course Description En </label>
+        <textarea
+          [class]="{
+            'is-invalid': submitted && getFormControls.Course_DetailsEn.errors
+          }"
+          id="Course_DetailsEn"
+          class="form-control"
+          type="text"
+          name="Course_DetailsEn"
+          formControlName="Course_DetailsEn"
+          placeholder="Course Description"
+          rows="10"
+          cols="10"
+        ></textarea>
+        <div
+          *ngIf="
+            getFormControls.Course_DetailsEn.invalid &&
+            (getFormControls.Course_DetailsEn.dirty ||
+              getFormControls.Course_DetailsEn.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="getFormControls.Course_DetailsEn.errors?.required">
+            required.
+          </div>
+          <div *ngIf="getFormControls.Course_DetailsEn.errors?.minlength">
+            must be at least 50 characters long.
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-1">
+        <label for="Course_DetailsAr">Course Description Ar </label>
+        <textarea
+          [class]="{
+            'is-invalid': submitted && getFormControls.Course_DetailsAr.errors
+          }"
+          id="Course_DetailsAr"
+          class="form-control text-right"
+          type="text"
+          name="Course_DetailsAr"
+          formControlName="Course_DetailsAr"
+          placeholder="تفاصيل الكورس"
+          rows="10"
+          cols="10"
+        ></textarea>
+        <div
+          *ngIf="
+            getFormControls.Course_DetailsAr.invalid &&
+            (getFormControls.Course_DetailsAr.dirty ||
+              getFormControls.Course_DetailsAr.touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="getFormControls.Course_DetailsAr.errors?.required">
+            required.
+          </div>
+          <div *ngIf="getFormControls.Course_DetailsAr.errors?.minlength">
+            must be at least 50 characters long.
+          </div>
+          <div *ngIf="getFormControls.Course_DetailsAr.errors?.pattern">
+            must be in arabic
+          </div>
+        </div>
+      </div>
+      <div class="col-12 mt-1">
+        <label for="Course_Date">Course Date </label>
+        <input
+          [class]="{
+            'is-invalid': submitted && getFormControls.Course_Date.errors
+          }"
+          id="Course_Date"
+          class="form-control"
+          type="date"
+          name="Course_Date"
+          formControlName="Course_Date"
+        />
+        <div
+          *ngIf="submitted && getFormControls.Course_Date.errors"
+          class="text-danger"
+        >
+          required
+        </div>
+      </div>
+      <div class="text-center w-100 mt-5">
+        <button
+          type="submit"
+          [disabled]="addTraining.pristine"
+          class="btn btn-success"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

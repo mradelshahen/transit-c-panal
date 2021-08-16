@@ -1,0 +1,185 @@
+<div>
+  <h1 class="font-weight-bold text-capitalize text-center">Events</h1>
+  <p>All <span>*</span> Required</p>
+  <form [formGroup]="eventForm" (ngSubmit)="onSubmitEvent()" class="row">
+    <div class="col-md-12 mt-1">
+      <label for="EventNameEn">Event Name En</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.EventNameEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="EventNameEn"
+        name="EventNameEn"
+        formControlName="EventNameEn"
+        placeholder="ex:Signing an agreement"
+      />
+      <div
+        *ngIf="
+          getFormControls.EventNameEn.invalid &&
+          (getFormControls.EventNameEn.dirty ||
+            getFormControls.EventNameEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.EventNameEn.errors?.required">
+          Name is required.
+        </div>
+        <div *ngIf="getFormControls.EventNameEn.errors?.minlength">
+          Name must be at least 5 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="EventNameAr">Event Name Ar</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.EventNameAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="EventNameAr"
+        name="EventNameAr"
+        formControlName="EventNameAr"
+        placeholder="توقيع عقود"
+      />
+      <div
+        *ngIf="
+          getFormControls.EventNameAr.invalid &&
+          (getFormControls.EventNameAr.dirty ||
+            getFormControls.EventNameAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.EventNameAr.errors?.required">
+          Arabic Name is required.
+        </div>
+        <div *ngIf="getFormControls.EventNameAr.errors?.minlength">
+          Name must be at least 5 characters long.
+        </div>
+        <div *ngIf="getFormControls.EventNameAr.errors?.pattern">
+          Name must be in Arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="EventDescEn">Event Description En</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.eventDescEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="eventDescEn"
+        name="eventDescEn"
+        formControlName="eventDescEn"
+        placeholder="ex:Event Description"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.eventDescEn.invalid &&
+          (getFormControls.eventDescEn.dirty ||
+            getFormControls.eventDescEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.eventDescEn.errors?.required">
+          Description is required.
+        </div>
+        <div *ngIf="getFormControls.eventDescEn.errors?.minlength">
+          Name must be at least 50 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="EventDescEn">Event Description Ar</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.eventDescAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="eventDescAr"
+        name="eventDescAr"
+        formControlName="eventDescAr"
+        placeholder="تفاصيل الحدث "
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.eventDescAr.invalid &&
+          (getFormControls.eventDescAr.dirty ||
+            getFormControls.eventDescAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.eventDescAr.errors?.required">
+          Arabic Description is required.
+        </div>
+        <div *ngIf="getFormControls.eventDescAr.errors?.minlength">
+          Name must be at least 50 characters long.
+        </div>
+        <div *ngIf="getFormControls.eventDescAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="EventData">Event Date</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.EventData.errors
+        }"
+        class="form-control"
+        type="date"
+        id="EventData"
+        name="EventData"
+        formControlName="EventData"
+        placeholder="2020-10-05"
+      />
+      <div
+        *ngIf="
+          submitted ||
+          (getFormControls.EventData.touched &&
+            !getFormControls.EventData.value)
+        "
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="EventImg">Event Image</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.EventImage.errors
+        }"
+        class="form-control"
+        type="file"
+        id="EventImage"
+        name="EventImage"
+        formControlName="EventImage"
+        (change)="fileUploader($event)"
+      />
+      <div
+        *ngIf="
+          submitted ||
+          (getFormControls.EventImage.touched &&
+            !getFormControls.EventImage.value)
+        "
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="text-center w-100 mt-5">
+      <button class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>

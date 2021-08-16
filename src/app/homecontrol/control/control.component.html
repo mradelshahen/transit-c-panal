@@ -1,0 +1,175 @@
+<div class="m-0" 
+  style="height: 100%;
+   background: linear-gradient(
+    9deg,
+    rgba(24, 28, 38, 1) 0%,
+    rgba(17, 28, 59, 1) 73%,
+    rgba(17, 25, 59, 1) 100%
+  );"
+>
+
+  <div class="native__slider">
+
+    <div class="slider__items">
+
+      <div class="text-center">
+        <p class="card-header text-center">HR | User</p>
+      </div>
+
+      <div id="accordion">
+        <div class="card" >
+
+          <div id="headingOne" class="btn btn-link card-header" data-toggle="collapse" data-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne"             
+            >
+
+            <i class="fas fa-home text-white"></i>
+            Home
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+           
+            <div class="card-body">
+            <ul>
+                <h5>Events</h5>
+                <ul>
+                  <a routerLink="/homepage/events"><li>Add Events</li></a>
+                  <a routerLink="/homepage/event/edit"><li>Edit Event</li></a>
+                </ul>
+            </ul>
+            <br/>
+            <ul>
+                <ul>
+                  <h5>
+                    <a routerLink="/homepage/statistics"><li style="padding-left: 0;">Statistic</li></a>
+                  </h5>
+                </ul>
+            </ul>
+          </div> 
+          </div>
+        </div>
+
+
+
+        <div class="card">
+          <div id="headingTwo" class="btn btn-link collapsed card-header" data-toggle="collapse"
+            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+
+            <i class="fas fa-info-circle"></i>
+            About
+
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+
+              <ul>
+                
+                  <h5>Board Members</h5>
+                  <ul>
+                    <a routerLink="/about/board"><li>Add Member</li></a>
+                    <a routerLink="/about/editboard"><li>Edit Member</li></a>
+                  </ul>
+                
+              </ul>
+
+              <ul>
+                
+                  <h5>Patrners</h5>
+                  <ul>
+                    <a routerLink="/about/addpartner"><li>Add Partner</li></a>
+                  </ul>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div id="headingThree" class="btn btn-link collapsed card-header" data-toggle="collapse"
+            data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            <i class="fas fa-briefcase"></i>
+            Services
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <ul>
+                
+                  <h5>Departments</h5>
+                  <ul>
+                    <a routerLink="/services/department/add"><li>Add Department</li></a>
+                    <a routerLink="/services/department/edit"><li>Edit Department</li></a>
+                  </ul>
+                                
+                  <h5>Projects</h5>
+                  <ul>
+                      <a routerLink="/services/project/add"><li>Add Projects</li></a>                    
+                      <a routerLink="/services/project/edit"><li>Edit Projcts</li></a>
+                  </ul>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div id="headingFour" class="btn btn-link collapsed card-header" data-toggle="collapse"
+            data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+
+            <i class="fas fa-sticky-note"></i>
+            Tenders
+
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+              <ul>
+                  <a routerLink="tender/add"><li>Add Tender</li></a>
+                  <a routerLink="tender/edit"><li>Eidt Tender</li></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div id="headingFive" class="btn btn-link collapsed card-header" data-toggle="collapse"
+            data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+            <i class="fas fa-desktop"></i>
+            Training
+          </div>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+            <div class="card-body">
+              <ul>
+                
+                  <a routerLink="training/add"><li>Add Training</li></a>
+                
+                
+                  <a routerLink="training/edit"><li>Eidt Training</li></a>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div id="headingSix" class="btn btn-link collapsed card-header" data-toggle="collapse"
+            data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+
+            <i class="fas fa-address-card"></i>
+            Careers
+
+          </div>
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+            <div class="card-body">
+              <ul>
+                
+                  <a routerLink="/careers/add/career"><li>Add Job</li> </a>
+                
+                
+                  <a routerLink="/careers/edit/career"><li>Eidt Job</li></a>
+                
+                
+                  <a routerLink="/careers/allcvs"><li>Get all Cvs</li></a>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

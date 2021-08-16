@@ -1,0 +1,239 @@
+<div>
+  <h1 class="font-weight-bold text-capitalize text-center">Add Department</h1>
+  <p>All <span>*</span> Required</p>
+  <form [formGroup]="addDepartmentForm" (ngSubmit)="onSubmit()" class="row">
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentNameEn">Department Name En</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentNameEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="DepartmentNameEn"
+        name="DepartmentNameEn"
+        formControlName="DepartmentNameEn"
+        placeholder="ex:INFRA"
+      />
+      <div
+        *ngIf="
+          getFormControls.DepartmentNameEn.invalid &&
+          (getFormControls.DepartmentNameEn.dirty ||
+            getFormControls.DepartmentNameEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.DepartmentNameEn.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.DepartmentNameEn.errors?.minlength">
+          must be at least 3 characters long.
+        </div>
+        <div *ngIf="getFormControls.DepartmentNameEn.errors?.pattern">
+          Must be in Arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentNameAr">Department Name Ar</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentNameAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="DepartmentNameAr"
+        name="DepartmentNameAr"
+        formControlName="DepartmentNameAr"
+        placeholder="التركيبات"
+      />
+      <div
+        *ngIf="
+          getFormControls.DepartmentNameAr.invalid &&
+          (getFormControls.DepartmentNameAr.dirty ||
+            getFormControls.DepartmentNameAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.DepartmentNameAr.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.DepartmentNameAr.errors?.minlength">
+          must be at least 3 characters long.
+        </div>
+        <div *ngIf="getFormControls.DepartmentNameAr.errors?.pattern">
+          Must be in Arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentBriefEn"> Description En</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentBriefEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="DepartmentBriefEn"
+        name="DepartmentBriefEn"
+        formControlName="DepartmentBriefEn"
+        placeholder="ex:  Description"
+        rows="10"
+        cols="10"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.DepartmentBriefEn.invalid &&
+          (getFormControls.DepartmentBriefEn.dirty ||
+            getFormControls.DepartmentBriefEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.DepartmentBriefEn.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.DepartmentBriefEn.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+        <div *ngIf="getFormControls.DepartmentBriefEn.errors?.pattern">
+          Must be in English
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentBriefAr"> Description Ar</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentBriefAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="DepartmentBriefAr"
+        name="DepartmentBriefAr"
+        formControlName="DepartmentBriefAr"
+        placeholder="تفاصيل  "
+        rows="10"
+        cols="10"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.DepartmentBriefAr.invalid &&
+          (getFormControls.DepartmentBriefAr.dirty ||
+            getFormControls.DepartmentBriefAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.DepartmentBriefAr.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.DepartmentBriefAr.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+        <div *ngIf="getFormControls.DepartmentBriefAr.errors?.pattern">
+          Must be in Arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentProjectNum">Department Project Number</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentProjectNum.errors
+        }"
+        class="form-control"
+        type="text"
+        id="DepartmentProjectNum"
+        name="DepartmentProjectNum"
+        formControlName="DepartmentProjectNum"
+        placeholder="10"
+      />
+      <div
+        *ngIf="
+          getFormControls.DepartmentNameEn.invalid &&
+          (getFormControls.DepartmentNameEn.dirty ||
+            getFormControls.DepartmentNameEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.DepartmentNameEn.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.DepartmentNameEn.errors?.minlength">
+          must be at least 3 characters long.
+        </div>
+        <div *ngIf="getFormControls.DepartmentNameEn.errors?.pattern">
+          Must be in Arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentImage">Department Photo</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentImage.errors
+        }"
+        class="form-control"
+        type="file"
+        id="DepartmentImage"
+        name="DepartmentImage"
+        formControlName="DepartmentImage"
+        (change)="fileUploader($event)"
+      />
+      <div
+        *ngIf="submitted && getFormControls.DepartmentImage.errors"
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentImage">Sector Name EN</label>
+      <span>*</span>
+      <select class="custom-select" formControlName="SectorNameEn">
+        <option value="" disabled>Choose a sector</option>
+        <option *ngFor="let sector of sectorEn" [ngValue]="sector">
+          {{ sector }}
+        </option>
+      </select>
+      <div
+        *ngIf="submitted && getFormControls.SectorNameEn.errors"
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentImage">Sector Name Ar</label>
+      <span>*</span>
+      <select class="custom-select" formControlName="SectorNameAr">
+        <option value="" disabled>اختار القطاع</option>
+        <option *ngFor="let sector of sectorAr" [ngValue]="sector">
+          {{ sector }}
+        </option>
+      </select>
+      <div
+        *ngIf="submitted && getFormControls.SectorNameAr.errors"
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+
+    <div class="text-center w-100 mt-5">
+      <button
+        type="submit"
+        [disabled]="addDepartmentForm.pristine"
+        class="btn btn-success"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

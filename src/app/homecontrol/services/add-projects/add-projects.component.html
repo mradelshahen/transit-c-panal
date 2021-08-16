@@ -1,0 +1,246 @@
+<div>
+  <h1 class="font-weight-bold text-capitalize text-center">Add Project</h1>
+  <p>All <span>*</span> Required</p>
+  <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()" class="row">
+    <div class="col-md-12 mt-1">
+      <label for="ProjectNameEn">Project Name En</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.ProjectNameEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="ProjectNameEn"
+        name="ProjectNameEn"
+        formControlName="ProjectNameEn"
+        placeholder="ernst"
+      />
+      <div
+        *ngIf="
+          getFormControls.ProjectNameEn.invalid &&
+          (getFormControls.ProjectNameEn.dirty ||
+            getFormControls.ProjectNameEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.ProjectNameEn.errors?.required">
+          Arabic Description is required.
+        </div>
+        <div *ngIf="getFormControls.ProjectNameEn.errors?.minlength">
+          Name must be at least 3 characters long.
+        </div>
+        <div *ngIf="getFormControls.ProjectNameEn.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="ProjectNameAr">Project Name Ar</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.ProjectNameAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="ProjectNameAr"
+        name="ProjectNameAr"
+        formControlName="ProjectNameAr"
+        placeholder="ارنست"
+      />
+      <div
+        *ngIf="
+          getFormControls.ProjectNameAr.invalid &&
+          (getFormControls.ProjectNameAr.dirty ||
+            getFormControls.ProjectNameAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.ProjectNameAr.errors?.required">
+          Arabic Description is required.
+        </div>
+        <div *ngIf="getFormControls.ProjectNameAr.errors?.minlength">
+          Name must be at least 10 characters long.
+        </div>
+        <div *ngIf="getFormControls.ProjectNameAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentNameEn ">Department Name En </label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentNameEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="DepartmentNameEn"
+        name="DepartmentNameEn"
+        formControlName="DepartmentNameEn"
+        placeholder="network"
+      />
+      <div
+        *ngIf="
+          getFormControls.DepartmentNameEn.invalid &&
+          (getFormControls.DepartmentNameEn.dirty ||
+            getFormControls.DepartmentNameEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.ProjectNameAr.errors?.required">
+          required.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DepartmentNameAr">Department Name AR </label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.DepartmentNameAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="DepartmentNameAr"
+        name="DepartmentNameAr"
+        formControlName="DepartmentNameAr"
+        placeholder="الشبكات"
+      />
+      <div
+        *ngIf="
+          getFormControls.DepartmentNameAr.invalid &&
+          (getFormControls.DepartmentNameAr.dirty ||
+            getFormControls.DepartmentNameAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.ProjectNameAr.errors?.required">
+          required.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="ProjectBriefEn"> Description En</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.ProjectBriefEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="ProjectBriefEn"
+        name="ProjectBriefEn"
+        formControlName="ProjectBriefEn"
+        placeholder="ex:  Description"
+        rows="10"
+        cols="10"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.ProjectBriefEn.invalid &&
+          (getFormControls.ProjectBriefEn.dirty ||
+            getFormControls.ProjectBriefEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.ProjectBriefEn.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.ProjectBriefEn.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+        <div *ngIf="getFormControls.ProjectBriefEn.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-1">
+      <label for="ProjectBriefAr"> Description Ar</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.ProjectBriefAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="ProjectBriefAr"
+        name="ProjectBriefAr"
+        formControlName="ProjectBriefAr"
+        placeholder="تفاصيل  "
+        rows="10"
+        cols="10"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.ProjectBriefAr.invalid &&
+          (getFormControls.ProjectBriefAr.dirty ||
+            getFormControls.ProjectBriefAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.ProjectBriefAr.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.ProjectBriefAr.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+        <div *ngIf="getFormControls.ProjectBriefAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-1">
+      <label for="Image">Department Photo</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.Image.errors
+        }"
+        class="form-control"
+        type="file"
+        id="Image"
+        name="Image"
+        formControlName="Image"
+        (change)="fileUploader($event)"
+      />
+      <div
+        *ngIf="submitted && getFormControls.Image.errors"
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="Image">Project Date</label>
+      <span>*</span>
+      <input
+        class="form-control"
+        type="date"
+        name="ProjectDate"
+        formControlName="ProjectDate"
+        id="ProjectDate"
+      />
+      <div
+        *ngIf="submitted && getFormControls.ProjectDate.errors"
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+
+    <div class="text-center w-100 mt-5">
+      <button
+        type="submit"
+        [disabled]="addProjectForm.pristine"
+        class="btn btn-success"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

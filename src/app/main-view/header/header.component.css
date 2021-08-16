@@ -1,0 +1,17 @@
+nav {
+  background: linear-gradient(
+    9deg,
+    rgba(24, 28, 38, 1) 0%,
+    rgba(17, 28, 59, 1) 73%,
+    rgba(17, 25, 59, 1) 100%
+  );
+}
+
+nav .company .company_title {
+  font-size: 1.8rem;
+  color: #fff;
+}
+.company__logo {
+  width: 60px;
+  height: 60px;
+}

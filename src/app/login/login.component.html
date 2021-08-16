@@ -1,0 +1,36 @@
+<div class="login">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img
+          src="../../assets/LOGO.svg"
+          id="icon"
+          alt="company Icon"
+          class="w-25"
+        />
+      </div>
+
+      <!-- Login Form -->
+      <form [formGroup]="loginForm" (ngSubmit)="onUserLogin()">
+        <input
+          type="text"
+          id="login"
+          class="fadeIn second"
+          name="login"
+          placeholder="login"
+          formControlName="Email"
+        />
+        <input
+          type="password"
+          id="password"
+          class="fadeIn third"
+          name="login"
+          placeholder="password"
+          formControlName="Password"
+        />
+        <input type="submit" class="fadeIn fourth" value="Log In" />
+      </form>
+    </div>
+  </div>
+</div>

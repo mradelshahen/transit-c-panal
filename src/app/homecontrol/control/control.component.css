@@ -1,0 +1,54 @@
+.native__slider {
+  /* background-color: #f9f9f9; */
+  height: 100vh;
+}
+.card-header {
+  background: linear-gradient(
+    9deg,
+    rgba(24, 28, 38, 1) 0%,
+    rgba(17, 28, 59, 1) 73%,
+    rgba(17, 25, 59, 1) 100%
+  );
+  color: #fff;
+  text-align: left;
+  padding: 15px  40px; 
+  border-color: #000 ;
+}
+button {
+  color: #fff !important ;
+}
+.btn.focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%);
+}
+
+.card{
+  background-color: #fcfcfc;
+  text-align: left;
+  border: 1px solid rgba(0, 0, 0, 0.7) ;
+  
+}
+.text-center p{
+  padding: 15px;
+  font-weight: 900;
+}
+ul{
+  margin:0;
+  padding: 0;
+}
+li{
+  padding: 7px ;
+  margin: 5px 0;
+  list-style: none;
+  transition: 0.2s ease-in-out;
+  border-bottom: 1px solid rgba(17, 28, 59, 0.1);
+}
+a:hover{
+  background-color: rgba(17, 28, 59, 0.5);
+  font-weight: 900;
+}
+li:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease-in-out;
+}

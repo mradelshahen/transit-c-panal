@@ -1,0 +1,84 @@
+<div>
+  <h1 class="font-weight-bold text-capitalize text-center">Statistic</h1>
+  <p>All <span>*</span> Required</p>
+  <form [formGroup]="statisticsForm" (ngSubmit)="onSubmit()" class="row">
+    <div class="col-md-12 mt-1">
+      <label for="StatisticNameEn">Statistic Name En</label>
+      <span>*</span>
+
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.StatisticNameEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="StatisticNameEn"
+        name="StatisticNameEn"
+        formControlName="StatisticNameEn"
+        placeholder="ex:Projects"
+      />
+      <div
+        *ngIf="
+          submitted ||
+          (getFormControls.StatisticNameEn.invalid &&
+            (getFormControls.StatisticNameEn.dirty ||
+              getFormControls.StatisticNameEn.touched))
+        "
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="StatisticNameAr">Statistic Name Ar</label>
+      <span>*</span>
+
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.StatisticNameAr.errors
+        }"
+        class="form-control"
+        type="text"
+        id="StatisticNameAr"
+        name="StatisticNameAr"
+        formControlName="StatisticNameAr"
+        placeholder="المشروعات"
+      />
+      <div
+        *ngIf="
+          submitted ||
+          (getFormControls.StatisticNameAr.invalid &&
+            (getFormControls.StatisticNameAr.dirty ||
+              getFormControls.StatisticNameAr.touched))
+        "
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="amount">Amount</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.amount.errors
+        }"
+        class="form-control"
+        type="text"
+        id="amount"
+        name="amount"
+        formControlName="amount"
+        placeholder="ex:2"
+      />
+      <div
+        *ngIf="submitted && getFormControls.amount.invalid"
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="text-center w-100 mt-5">
+      <button class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>

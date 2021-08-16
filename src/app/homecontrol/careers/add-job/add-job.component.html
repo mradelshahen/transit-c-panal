@@ -1,0 +1,204 @@
+<div>
+  <h1 class="font-weight-bold text-capitalize text-center">Add Job</h1>
+  <p>All <span>*</span> Required</p>
+  <form [formGroup]="addCareerForm" (ngSubmit)="onCareerSubmit()" class="row">
+    <div class="col-md-12 mt-1">
+      <label for="titleEn">Title En</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.titleEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="titleEn"
+        name="titleEn"
+        formControlName="titleEn"
+        placeholder="TL Software Developer"
+      />
+      <div
+        *ngIf="
+          getFormControls.titleEn.invalid &&
+          (getFormControls.titleEn.dirty || getFormControls.titleEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.titleEn.errors?.required">required.</div>
+        <div *ngIf="getFormControls.titleEn.errors?.minlength">
+          must be at least 3 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="titleAr">Title Ar</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.titleAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="titleAr"
+        name="titleAr"
+        formControlName="titleAr"
+        placeholder="مطور برمجيات"
+      />
+      <div
+        *ngIf="
+          getFormControls.titleAr.invalid &&
+          (getFormControls.titleAr.dirty || getFormControls.titleAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.titleAr.errors?.required">required.</div>
+        <div *ngIf="getFormControls.titleAr.errors?.minlength">
+          must be at least 3 characters long.
+        </div>
+        <div *ngIf="getFormControls.titleAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-1">
+      <label for="about_the_JobEn"> About En</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.about_the_JobEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="about_the_JobEn"
+        name="about_the_JobEn"
+        formControlName="about_the_JobEn"
+        placeholder="ex: Role Description"
+        rows="5"
+        cols="5"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.about_the_JobEn.invalid &&
+          (getFormControls.about_the_JobEn.dirty ||
+            getFormControls.about_the_JobEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.about_the_JobEn.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.about_the_JobEn.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="about_the_JobAr"> About Ar</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.about_the_JobAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="about_the_JobAr"
+        name="about_the_JobAr"
+        formControlName="about_the_JobAr"
+        placeholder="تفاصيل الوظيفة "
+        rows="5"
+        cols="5"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.about_the_JobAr.invalid &&
+          (getFormControls.about_the_JobAr.dirty ||
+            getFormControls.about_the_JobAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.about_the_JobAr.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.about_the_JobAr.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+        <div *ngIf="getFormControls.about_the_JobAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-1">
+      <label for="job_RequirementsEn"> Requirements En</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.job_RequirementsEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="job_RequirementsEn"
+        name="job_RequirementsEn"
+        formControlName="job_RequirementsEn"
+        placeholder="+2 year as A Software Developer in .Net"
+        rows="10"
+        cols="10"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.job_RequirementsEn.invalid &&
+          (getFormControls.job_RequirementsEn.dirty ||
+            getFormControls.job_RequirementsEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.job_RequirementsEn.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.job_RequirementsEn.errors?.minlength">
+          must be at least 50 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="job_RequirementsAr"> Requirements Ar</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.job_RequirementsAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="job_RequirementsAr"
+        name="job_RequirementsAr"
+        formControlName="job_RequirementsAr"
+        placeholder="خبرة عامين كمطور برمجيات"
+        rows="10"
+        cols="10"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.job_RequirementsAr.invalid &&
+          (getFormControls.job_RequirementsAr.dirty ||
+            getFormControls.job_RequirementsAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.job_RequirementsAr.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.job_RequirementsAr.errors?.minlength">
+          must be at least 50 characters long.
+        </div>
+        <div *ngIf="getFormControls.job_RequirementsAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+    <div class="text-center w-100 mt-5">
+      <button class="btn btn-success" [disabled]="addCareerForm.pristine">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

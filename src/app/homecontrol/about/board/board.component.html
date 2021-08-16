@@ -1,0 +1,214 @@
+<div>
+  <h1 class="font-weight-bold text-capitalize text-center">Add Members</h1>
+  <p>All <span>*</span> Required</p>
+  <form [formGroup]="boradForm" (ngSubmit)="onSubmitEvent()" class="row">
+    <div class="col-md-12 mt-1">
+      <label for="NameEn">Member Name En</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.NameEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="NameEn"
+        name="NameEn"
+        formControlName="NameEn"
+        placeholder="ex:Eng\Ahmed"
+      />
+      <div
+        *ngIf="
+          getFormControls.NameEn.invalid &&
+          (getFormControls.NameEn.dirty || getFormControls.NameEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.NameEn.errors?.required">
+          Name is required.
+        </div>
+        <div *ngIf="getFormControls.NameEn.errors?.minlength">
+          Name must be at least 3 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="NameAr">Member Name Ar</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.NameAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="NameAr"
+        name="NameAr"
+        formControlName="NameAr"
+        placeholder="مهندس/أحمد"
+      />
+      <div
+        *ngIf="
+          getFormControls.NameAr.invalid &&
+          (getFormControls.NameAr.dirty || getFormControls.NameAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.NameAr.errors?.required">
+          Name is required.
+        </div>
+        <div *ngIf="getFormControls.NameAr.errors?.minlength">
+          Name must be at least 3 characters long.
+        </div>
+        <div *ngIf="getFormControls.NameAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="position_TitleEn">Position EN</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.position_TitleEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="position_TitleEn"
+        name="position_TitleEn"
+        formControlName="position_TitleEn"
+        placeholder="CEO"
+      />
+      <div
+        *ngIf="
+          getFormControls.position_TitleEn.invalid &&
+          (getFormControls.position_TitleEn.dirty ||
+            getFormControls.position_TitleEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.position_TitleEn.errors?.required">
+          required.
+        </div>
+        <div *ngIf="getFormControls.position_TitleEn.errors?.minlength">
+          must be at least 3 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DetailsEn"> Description En</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.DetailsEn.errors
+        }"
+        class="form-control"
+        type="text"
+        id="DetailsEn"
+        name="DetailsEn"
+        formControlName="DetailsEn"
+        placeholder="ex: Role Description"
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.DetailsEn.invalid &&
+          (getFormControls.DetailsEn.dirty || getFormControls.DetailsEn.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.DetailsEn.errors?.required">
+          Name is required.
+        </div>
+        <div *ngIf="getFormControls.DetailsEn.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="position_TitleAr">Position Ar</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.position_TitleEn.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="position_TitleAr"
+        name="position_TitleAr"
+        formControlName="position_TitleAr"
+        placeholder="CEO"
+      />
+      <div
+        *ngIf="
+          getFormControls.position_TitleAr.invalid &&
+          (getFormControls.position_TitleAr.dirty ||
+            getFormControls.position_TitleAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.position_TitleAr.errors?.required">
+          Name is required.
+        </div>
+        <div *ngIf="getFormControls.position_TitleAr.errors?.minlength">
+          Name must be at least 3 characters long.
+        </div>
+        <div *ngIf="getFormControls.position_TitleAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 mt-1">
+      <label for="DetailsAr"> Description Ar</label>
+      <span>*</span>
+      <textarea
+        [class]="{
+          'is-invalid': submitted && getFormControls.DetailsAr.errors
+        }"
+        class="form-control text-right"
+        type="text"
+        id="DetailsAr"
+        name="DetailsAr"
+        formControlName="DetailsAr"
+        placeholder="تفاصيل الوظيفة "
+      ></textarea>
+      <div
+        *ngIf="
+          getFormControls.DetailsAr.invalid &&
+          (getFormControls.DetailsAr.dirty || getFormControls.DetailsAr.touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="getFormControls.DetailsAr.errors?.required">required.</div>
+        <div *ngIf="getFormControls.DetailsAr.errors?.minlength">
+          must be at least 10 characters long.
+        </div>
+        <div *ngIf="getFormControls.DetailsAr.errors?.pattern">
+          must be in arabic
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 mt-1">
+      <label for="Image_Upload">Member Photo</label>
+      <span>*</span>
+      <input
+        [class]="{
+          'is-invalid': submitted && getFormControls.Image_Upload.errors
+        }"
+        class="form-control"
+        type="file"
+        id="Image_Upload"
+        name="Image_Upload"
+        formControlName="Image_Upload"
+        (change)="fileUploader($event)"
+      />
+      <div
+        *ngIf="submitted && getFormControls.Image_Upload.errors"
+        class="text-danger"
+      >
+        required
+      </div>
+    </div>
+    <div class="text-center w-100 mt-5">
+      <button class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
